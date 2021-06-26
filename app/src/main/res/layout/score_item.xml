@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="score"
+            type="com.example.memory.data.Score" />
+        <variable
+            name="scoreboardViewModel"
+            type="com.example.memory.viewmodels.ScoreboardViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/gamePoints"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@{score.convToString(score.points)}"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/amaticsc_bold"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/gameTime"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:text="@{score.convToTime(score.time)}"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/amaticsc_bold"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            app:layout_constraintHorizontal_bias="0.33"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/gameDifficulty"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="@{score.difficulty}"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/amaticsc_bold"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            app:layout_constraintHorizontal_bias="0.62"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/gameDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{score.date}"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/amaticsc_bold"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            app:layout_constraintHorizontal_bias="0.97"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

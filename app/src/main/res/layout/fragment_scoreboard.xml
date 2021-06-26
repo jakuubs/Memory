@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="scoreboardViewModel"
+            type="com.example.memory.viewmodels.ScoreboardViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.ScoreboardFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scoreboardTags"
+                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/layout_gameboard" >
+
+                <TextView
+                    android:id="@+id/pointsTag"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/pointsTag"
+                    android:textColor="@color/teal"
+                    android:textSize="28sp"
+                    android:fontFamily="@font/amaticsc_bold"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.03"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/timeTag"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/timeTag"
+                    android:textColor="@color/teal"
+                    android:textSize="28sp"
+                    android:fontFamily="@font/amaticsc_bold"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.32"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/difficultyTag"
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/DifficultyTag"
+                    android:textColor="@color/teal"
+                    android:textSize="28sp"
+                    android:fontFamily="@font/amaticsc_bold"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.66"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/dateTag"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/DateTag"
+                    android:textColor="@color/teal"
+                    android:textSize="28sp"
+                    android:fontFamily="@font/amaticsc_bold"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.97"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/scoreboardRecyclerView"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_weight="5"
+                android:scrollbars="vertical"
+                android:fadeScrollbars="true"
+                android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="26dp"
+                tools:listitem="@layout/score_item" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/goToMainMenuButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/goToMainMenu"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/squada_one_regular"
+                    android:onClick="@{() -> scoreboardViewModel.goToMainMenu()}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.863" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

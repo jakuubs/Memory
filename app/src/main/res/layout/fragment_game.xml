@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="gameViewModel"
+            type="com.example.memory.viewmodels.GameViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/layout_gameboard"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.05" >
+
+            <TextView
+                android:id="@+id/pointsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/points"
+                android:textSize="40sp"
+                android:textColor="@color/teal"
+                android:fontFamily="@font/amaticsc_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:textColor="@color/teal"
+                android:fontFamily="@font/amaticsc_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.34"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/timeLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:textColor="@color/teal"
+                android:fontFamily="@font/amaticsc_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/board"
+            android:layout_width="380dp"
+            android:layout_height="480dp"
+            android:orientation="vertical"
+            android:weightSum="6"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:padding="10dip"
+            android:background="@drawable/layout_gameboard"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/que11"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que12"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que13"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que14"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/que21"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que22"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que23"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que24"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                >
+
+                <ImageView
+                    android:id="@+id/que31"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que32"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que33"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que34"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/que41"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que42"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que43"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que44"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/que51"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que52"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que53"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que54"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/que61"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que62"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que63"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+
+                <ImageView
+                    android:id="@+id/que64"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="2.5dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/youWon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/youWon"
+            android:textColor="@color/black"
+            android:textSize="45sp"
+            android:fontFamily="@font/amaticsc_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <TextView
+            android:id="@+id/youLost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/youLost"
+            android:textColor="@color/black"
+            android:textSize="45sp"
+            android:fontFamily="@font/amaticsc_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <Button
+            android:id="@+id/playAgainButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/playAgain"
+            android:textSize="20sp"
+            android:fontFamily="@font/squada_one_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <Button
+            android:id="@+id/ggButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/goToMainMenu"
+            android:textSize="20sp"
+            android:fontFamily="@font/squada_one_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.65" />
+
+        <Button
+            android:id="@+id/surrenderButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/surrender"
+            android:textSize="20sp"
+            android:fontFamily="@font/squada_one_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.95" />
+
+        <TextView
+            android:id="@+id/areYouSure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/areYouSure"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:textColor="@color/teal"
+            android:fontFamily="@font/amaticsc_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9" />
+
+        <Button
+            android:id="@+id/yes"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="@string/yes"
+            android:textSize="20sp"
+            android:fontFamily="@font/squada_one_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.65"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.97" />
+
+        <Button
+            android:id="@+id/no"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="@string/no"
+            android:textSize="20sp"
+            android:fontFamily="@font/squada_one_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.97" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Memory</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="play">Play</string>
+    <string name="options">Options</string>
+    <string name="changePlayer">Change Player</string>
+    <string name="playerName">Player</string>
+    <string name="scoreboard">Scoreboard</string>
+    <string name="goToMainMenu">Main Menu</string>
+    <string name="changeIcons">Change icons:</string>
+    <string name="icons">Icons</string>
+    <string name="timeLeft">Time left</string>
+    <string name="setGameTime">Game time:</string>
+    <string name="seconds">sec</string>
+    <string name="minutes">min</string>
+    <string name="surrender">Surrender</string>
+    <string name="youWon">Good Game!</string>
+    <string name="playAgain">Play again</string>
+    <string name="points">Points:</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="areYouSure">Are you sure?</string>
+    <string name="saveSettings">Save</string>
+    <string name="clearScoreTable">Clear all scores:</string>
+    <string name="clear">Clear</string>
+    <string name="youLost">You\'ve Lost!</string>
+    <string name="changeTheme">Theme:</string>
+    <string name="changeDifficulty">Difficulty:</string>
+    <string name="pointsTag">POINTS</string>
+    <string name="timeTag">TIME</string>
+    <string name="DifficultyTag">DIFFICULTY</string>
+    <string name="DateTag">DATE</string>
+    <string name="memory">MEMORY</string>
+
+    <string-array name="icons">
+        <item>Animals</item>
+        <item>Cars</item>
+        <item>Emojis</item>
+        <item>Fruit</item>
+        <item>Logos</item>
+    </string-array>
+
+    <string-array name="difficulty">
+        <item>Easy</item>
+        <item>Normal</item>
+        <item>Hard</item>
+        <item>Hardcore</item>
+    </string-array>
+</resources>
